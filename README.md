@@ -4,6 +4,8 @@
 
 ## Pages
 
+- 動作確認用リンク: https://yamyam3.github.io/XR-app-TEST/
+
 - `/phone-ar.html`
   スマートフォン向け。AR.js の `Hiro` マーカーを使って 3D オブジェクトと短文を表示します。
 - `/quest-ar.html`
