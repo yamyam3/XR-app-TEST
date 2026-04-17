@@ -19,7 +19,7 @@
 
 検証用の `Hiro` マーカー画像を同梱しています。
 
-- [hiro-marker.png](/root/Codex/XR-app/public/assets/hiro-marker.png)
+- [hiro-marker.png](public/assets/hiro-marker.png)
 
 画面表示または印刷して、`Phone-ar`、`Quest-ar`、`Immersive-ar-with-maker` の検証に利用できます。
 
@@ -46,7 +46,7 @@ LAN 内の他端末からは `https://<your-ip>:5173/phone-ar.html`、`https://<
 
 - `.gitignore` で `node_modules/` と `dist/` は除外します。
 - このリポジトリには API キーやシークレットは含めていません。
-- 利用ライブラリと外部 CDN については [THIRD_PARTY_NOTICES.md](/root/Codex/XR-app/THIRD_PARTY_NOTICES.md) を参照してください。
+- 利用ライブラリと外部 CDN については [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) を参照してください。
 - `Phone-ar` の外部 CDN 依存を避けたい場合は、公開前に `A-Frame` と `AR.js` をローカル同梱へ切り替えてください。
 
 ## GitHub Pages
