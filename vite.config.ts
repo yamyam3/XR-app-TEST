@@ -2,7 +2,13 @@ import { resolve } from "node:path";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { defineConfig } from "vite";
 
+const repository = process.env.GITHUB_REPOSITORY;
+const repositoryName = repository?.split("/")[1];
+const base =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName ? `/${repositoryName}/` : "/";
+
 export default defineConfig({
+  base,
   plugins: [basicSsl()],
   server: {
     host: "0.0.0.0",

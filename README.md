@@ -38,3 +38,25 @@ LAN 内の他端末からは `https://<your-ip>:5173/phone-ar.html`、`https://<
 - このリポジトリには API キーやシークレットは含めていません。
 - 利用ライブラリと外部 CDN については [THIRD_PARTY_NOTICES.md](/root/Codex/XR-app/THIRD_PARTY_NOTICES.md) を参照してください。
 - `Phone-ar` の外部 CDN 依存を避けたい場合は、公開前に `A-Frame` と `AR.js` をローカル同梱へ切り替えてください。
+
+## GitHub Pages
+
+このプロジェクトは GitHub Pages にデプロイできます。
+
+- `.github/workflows/deploy-pages.yml` を追加済みです。
+- GitHub Actions 上では Vite の `base` を自動的にリポジトリ名へ合わせます。
+- 現在の想定公開 URL は `https://yamyam3.github.io/XR-app-TEST/` です。
+
+有効化手順:
+
+1. GitHub リポジトリの `Settings > Pages` を開く
+2. `Source` を `GitHub Actions` にする
+3. `main` ブランチへ push する
+
+公開後の代表 URL:
+
+- `https://yamyam3.github.io/XR-app-TEST/`
+- `https://yamyam3.github.io/XR-app-TEST/phone-ar.html`
+- `https://yamyam3.github.io/XR-app-TEST/quest-ar.html`
+- `https://yamyam3.github.io/XR-app-TEST/immersive-ar.html`
+- `https://yamyam3.github.io/XR-app-TEST/immersive-ar-with-maker.html`
