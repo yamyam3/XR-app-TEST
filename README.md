@@ -22,6 +22,7 @@
 - [hiro-marker.png](public/assets/hiro-marker.png)
 
 画面表示または印刷して、`Phone-ar`、`Quest-ar`、`Immersive-ar-with-maker` の検証に利用できます。
+この画像は Hiro マーカーの公開配布画像をベースにしており、由来とライセンスは [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) に記載しています。
 
 ## Run
 

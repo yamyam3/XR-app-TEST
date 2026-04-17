@@ -47,6 +47,15 @@ The `phone-ar.html` page currently loads the following browser scripts from exte
 - Typical upstream license: `MIT`
 - Version pinning: `3.4.7`
 
+## Bundled marker asset
+
+### `public/assets/hiro-marker.png`
+
+- Source page: `https://commons.wikimedia.org/wiki/File:Pattern-hiro.png`
+- Original upstream reference: `https://github.com/jeromeetienne/AR.js/tree/master/data/images`
+- License: `CC0 1.0`
+- Notes: included as a printable/displayable Hiro marker image for local verification.
+
 ## Notes
 
 - This repository does not vendor `node_modules/`.
