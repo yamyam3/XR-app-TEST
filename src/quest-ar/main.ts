@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { THREEx } from "@ar-js-org/ar.js-threejs";
 import { markerContent } from "../shared/content";
+import { resolveAssetUrl } from "../shared/assets";
 import type { QuestArCapability } from "../shared/types";
 
 const app = document.querySelector<HTMLDivElement>("#app");
@@ -501,7 +502,7 @@ const initArContext = () => {
   contextInitialized = true;
 
   arToolkitContext = new THREEx.ArToolkitContext({
-    cameraParametersUrl: "/assets/arjs/camera_para.dat",
+    cameraParametersUrl: resolveAssetUrl("assets/arjs/camera_para.dat"),
     detectionMode: "mono"
   });
 
@@ -530,7 +531,7 @@ const initArContext = () => {
 
   arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
     type: "pattern",
-    patternUrl: "/assets/arjs/patt.hiro"
+    patternUrl: resolveAssetUrl("assets/arjs/patt.hiro")
   });
 
   void arMarkerControls;

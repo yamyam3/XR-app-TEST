@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { THREEx } from "@ar-js-org/ar.js-threejs";
 import { markerContent } from "../shared/content";
+import { resolveAssetUrl } from "../shared/assets";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -603,7 +604,7 @@ const initMarkerContext = () => {
   contextInitialized = true;
 
   arToolkitContext = new THREEx.ArToolkitContext({
-    cameraParametersUrl: "/assets/arjs/camera_para.dat",
+    cameraParametersUrl: resolveAssetUrl("assets/arjs/camera_para.dat"),
     detectionMode: "mono"
   });
 
@@ -634,7 +635,7 @@ const initMarkerContext = () => {
 
   markerControls = new THREEx.ArMarkerControls(arToolkitContext, trackedRoot, {
     type: "pattern",
-    patternUrl: "/assets/arjs/patt.hiro"
+    patternUrl: resolveAssetUrl("assets/arjs/patt.hiro")
   });
 
   void markerControls;
