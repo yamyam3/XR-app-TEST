@@ -6,13 +6,13 @@
 
 - 動作確認用リンク: https://yamyam3.github.io/XR-app-TEST/
 
-- `/phone-ar.html`
+- `/phone-ar.html` https://yamyam3.github.io/XR-app-TEST/phone-ar.html
   スマートフォン向け。AR.js の `Hiro` マーカーを使って 3D オブジェクトと短文を表示します。
-- `/quest-ar.html`
+- `/quest-ar.html` https://yamyam3.github.io/XR-app-TEST/quest-ar.html
   Quest 3 向け。`Hiro` マーカーを読み、video-see-through 型で 3D オブジェクトを重ねます。
-- `/immersive-ar.html`
+- `/immersive-ar.html` https://yamyam3.github.io/XR-app-TEST/immersive-ar.html
   Quest 3 向け。WebXR `immersive-ar` セッションでパススルー空間に 3D オブジェクトを固定表示します。
-- `/immersive-ar-with-maker.html`
+- `/immersive-ar-with-maker.html` https://yamyam3.github.io/XR-app-TEST/immersive-ar-with-maker.html
   Quest 3 向け。`Hiro` マーカーを検出して位置を保存してから、WebXR `immersive-ar` セッションへ入り、保存した相対位置を元にオブジェクトを再配置します。
 
 ## Hiro Marker
