@@ -13,6 +13,14 @@
 - `/immersive-ar-with-maker.html`
   Quest 3 向け。`Hiro` マーカーを検出して位置を保存してから、WebXR `immersive-ar` セッションへ入り、保存した相対位置を元にオブジェクトを再配置します。
 
+## Hiro Marker
+
+検証用の `Hiro` マーカー画像を同梱しています。
+
+- [hiro-marker.png](/root/Codex/XR-app/public/assets/hiro-marker.png)
+
+画面表示または印刷して、`Phone-ar`、`Quest-ar`、`Immersive-ar-with-maker` の検証に利用できます。
+
 ## Run
 
 ```bash
@@ -42,6 +50,10 @@ LAN 内の他端末からは `https://<your-ip>:5173/phone-ar.html`、`https://<
 ## GitHub Pages
 
 このプロジェクトは GitHub Pages にデプロイできます。
+
+公開先:
+
+- `https://yamyam3.github.io/XR-app-TEST/`
 
 - `.github/workflows/deploy-pages.yml` を追加済みです。
 - GitHub Actions 上では Vite の `base` を自動的にリポジトリ名へ合わせます。
