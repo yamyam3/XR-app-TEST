@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Phone-ar</title>
+    <link rel="icon" href="data:," />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script>
+    <style>
+      :root {
+        --panel: rgba(16, 24, 40, 0.75);
+        --line: rgba(255, 255, 255, 0.14);
+        --accent: #f59e0b;
+        --ok: #10b981;
+        --warn: #f97316;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+        background: transparent;
+      }
+
+      .hud {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: env(safe-area-inset-top, 0px) 14px env(safe-area-inset-bottom, 0px);
+      }
+
+      .topbar,
+      .caption {
+        margin: 14px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: #fff;
+        backdrop-filter: blur(12px);
+      }
+
+      .topbar {
+        align-self: flex-start;
+        max-width: min(92vw, 460px);
+      }
+
+      .caption {
+        align-self: center;
+        width: min(92vw, 560px);
+      }
+
+      .eyebrow {
+        color: #fcd34d;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .title {
+        margin-top: 6px;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .meta,
+      .body {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--warn);
+        box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.18);
+      }
+
+      .status-dot.ready {
+        background: var(--ok);
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+      }
+
+      a-scene,
+      .a-scene {
+        position: fixed !important;
+        inset: 0;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 10;
+        background: transparent !important;
+      }
+
+      .a-canvas {
+        z-index: 11 !important;
+        background: transparent !important;
+      }
+
+      video.arjs-video {
+        position: fixed !important;
+        inset: 0;
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover;
+        z-index: 1 !important;
+        background: #000;
+      }
+
+      .a-enter-vr,
+      .a-orientation-modal {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hud" aria-live="polite">
+      <section class="topbar">
+        <div class="eyebrow">Phone-ar</div>
+        <div class="title">スマートフォンで `Hiro` マーカーを映してください</div>
+        <div class="meta">
+          <span class="status">
+            <span id="status-dot" class="status-dot"></span>
+            <span id="status-text">カメラ準備中</span>
+          </span>
+        </div>
+      </section>
+      <section class="caption">
+        <div class="eyebrow">Marker Content</div>
+        <div id="content-title" class="title">Marker not detected</div>
+        <div id="content-body" class="body">
+          カメラ許可後に `Hiro` マーカーを映すと、3D オブジェクトと説明文が表示されます。
+        </div>
+      </section>
+    </div>
+
+    <a-scene
+      embedded
+      renderer="alpha: true; logarithmicDepthBuffer: true; antialias: true; colorManagement: true"
+      vr-mode-ui="enabled: false"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-assets>
+        <img id="marker-guide" src="/assets/marker-guide.svg" alt="" />
+      </a-assets>
+
+      <a-marker id="tracked-marker" preset="hiro">
+        <a-entity id="content-root" position="0 0 0">
+          <a-cylinder
+            position="0 0.45 0"
+            radius="0.2"
+            height="0.6"
+            color="#0f766e"
+            shadow
+          ></a-cylinder>
+          <a-torus
+            position="0 0.9 0"
+            radius="0.28"
+            radius-tubular="0.05"
+            color="#f59e0b"
+            rotation="90 0 0"
+          ></a-torus>
+          <a-plane
+            position="0 0.15 0"
+            rotation="-90 0 0"
+            width="1.25"
+            height="1.25"
+            color="#f8fafc"
+            opacity="0.25"
+          ></a-plane>
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <script type="module" src="/src/phone-ar/main.ts"></script>
+  </body>
+</html>

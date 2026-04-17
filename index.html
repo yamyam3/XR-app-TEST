@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XR App</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4efe6;
+        --card: rgba(255, 252, 246, 0.88);
+        --line: rgba(69, 55, 41, 0.16);
+        --text: #2f2418;
+        --muted: #72624e;
+        --accent: #0f766e;
+        --accent-strong: #115e59;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(217, 119, 6, 0.12), transparent 26%),
+          linear-gradient(180deg, #fbf7f0 0%, #f1e8db 100%);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(960px, 100%);
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 24px 70px rgba(56, 39, 22, 0.12);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 0.95;
+      }
+
+      p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      a {
+        display: block;
+        padding: 18px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        transition: transform 160ms ease, border-color 160ms ease;
+      }
+
+      a:hover {
+        transform: translateY(-2px);
+        border-color: rgba(15, 118, 110, 0.4);
+      }
+
+      strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--accent-strong);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>XR App</h1>
+      <p>
+        `Phone-ar` はスマートフォン向けのマーカーARです。`Quest-ar` は Quest 3 向けのマーカーAR検証、`Immersive-ar` は Quest 3 向けの没入型パススルーAR、`Immersive-ar-with-maker` はマーカー検出から没入型へつなぐ実験ページです。
+      </p>
+      <p>
+        開発中は HTTPS の `npm run dev` で LAN 公開し、スマートフォンまたは Quest Browser から各ページへ直接アクセスします。
+      </p>
+      <div class="links">
+        <a href="/phone-ar.html">
+          <strong>Phone-ar</strong>
+          スマートフォンで `Hiro` マーカーを認識し、3D オブジェクトと短文を重ねて表示します。
+        </a>
+        <a href="/quest-ar.html">
+          <strong>Quest-ar</strong>
+          Quest 3 で `Hiro` マーカーを読み、カメラ映像の上に 3D オブジェクトを重ねます。
+        </a>
+        <a href="/immersive-ar.html">
+          <strong>Immersive-ar</strong>
+          Quest 3 の `immersive-ar` セッションに入り、パススルー空間へ 3D オブジェクトを固定表示します。
+        </a>
+        <a href="/immersive-ar-with-maker.html">
+          <strong>Immersive-ar-with-maker</strong>
+          Quest 3 でマーカー位置を取得してから `immersive-ar` に入り、近似位置へ 3D オブジェクトを再配置します。
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
